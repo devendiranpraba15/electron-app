@@ -1,13 +1,13 @@
 {
-    "compilerOptions": {
-      "outDir": "dist-electron",        // Output directory for compiled files
-      "target": "ESNext",               // Target modern JavaScript (ESNext)
-      "module": "NodeNext",             // Use ESM syntax
-      "strict": true,                   // Enable strict type checking
-      "skipLibCheck": true,             // Ignore errors in dependencies
-      "allowJs": true,                  // Allow JavaScript files
-      "checkJs": false                  // Disable type checking in .js files
-    },
-    "include": ["src/electron/**/*"],   // Include source files for transpilation
-    "exclude": ["node_modules"]         // Exclude dependencies
-  }
+  "compilerOptions": {
+    "outDir": "dist-electron", // Output directory for compiled files
+    "target": "ESNext", // Target modern JavaScript (ESNext)
+    "module": "NodeNext", // Use ESM syntax
+    "strict": true, // Enable strict type checking
+    "skipLibCheck": true, // Ignore errors in dependencies
+    "allowJs": true, // Allow JavaScript files
+    "checkJs": false // Disable type checking in .js files
+  },
+  "include": ["src/electron/**/*"], // Include source files for transpilation
+  "exclude": ["node_modules"] // Exclude dependencies
+}

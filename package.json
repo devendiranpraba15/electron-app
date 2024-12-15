@@ -3,33 +3,44 @@
   "version": "1.0.0",
   "description": "CPU RAM MEMORY",
   "type": "module",
-  "main": "dist-electron/main",
+  "main": "dist-electron/main.js",
   "scripts": {
-    "dev:react": "vite",
-    "dev:electron": "electron .",
-    "build:electron": "babel src/electron --out-dir dist-electron",
+    "dev": "npm-run-all --parallel dev:react dev:electron",
+    "dev:electron": "npm run build:electron && cross-env NODE_ENV=development electron .",
+    "build:electron": "npx babel src/electron --out-dir dist-electron",
     "start:electron": "node dist-electron/main.js",
-    "build": "vite build",
-    "serve": "vite preview"
+    "dev:react": "vite",
+    "build:react": "vite build",
+    "serve:react": "vite preview",
+    "dist:mac": "npm run build:electron && npm run build:react && electron-builder --mac --arm64",
+    "dist:win": "npm run build:electron && npm run build:react && electron-builder --win --x64",
+    "dist:linux": "npm run build:electron && npm run build:react && electron-builder --linux --x64"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron": "^33.2.1",
+    "os-utils": "^0.0.14",
+    "cross-env": "^7.0.3",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "recharts": "^2.12.7"
   },
   "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/preset-env": "^7.26.0",
     "@eslint/js": "^9.15.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
     "eslint": "^9.15.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.12.0",
+    "npm-run-all": "^4.1.5",
     "vite": "^6.0.1"
   }
 }
