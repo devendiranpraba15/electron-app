@@ -1,14 +1,14 @@
 {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "node": "current" // Target the current version of Node.js
-          },
-          "modules": false       // Disable module transformation for ES modules
-        }
-      ]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        },
+        "modules": false
+      }
     ]
-  }
-  
+  ],
+  "plugins": []
+}
